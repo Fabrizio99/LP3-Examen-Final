@@ -5,6 +5,20 @@
 {% block content %}
 <h2 class="title">{{titulo}}</h2>
 <p>{{mensaje}}</p>
+{% for curso in cursos %}
+            <li>
+                <h4>{{curso.codigo}} - {{curso.nombre}}</h4>
+                <span>Horas: {{curso.horas}} </span>
+                <span>Créditos: {{curso.creditos}} </span>
+                {% if curso.estado == 'A' %}
+                    <strong>Activo</strong>
+                {% else %}
+                    <strong>Inactivo</strong>
+                {% endif %}
+                <a href="{% url 'eliminarCurso' id=curso.idcurso %}">Eliminar</a>
+                </p>
+            </li>
+{% endfor %}
 {% endblock %}
 {% block script %}
 <script type="text/javascript">
