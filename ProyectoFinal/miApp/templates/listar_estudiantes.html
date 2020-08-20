@@ -5,6 +5,21 @@
 {% block content %}
 <h2 class="title">{{titulo}}</h2>
 <p>{{mensaje}}</p>
+{% for estudiante in estudiantes %}
+            <li>
+                <h4>{{estudiante.codigo}} - {{estudiante.nombre}} {{estudiante.apellidos}}</h4>
+                <span>Dni: {{estudiante.dni}} </span>
+                <span>Direccion: {{estudiante.direccion}} </span>
+                <span>Fecha de nacimiento: {{estudiante.fecha_nacimiento}} </span>              
+                {% if estudiante.estado == 'A' %}
+                    <strong>Activo</strong>
+                {% else %}
+                    <strong>Inactivo</strong>
+                {% endif %}
+                <a href="{% url 'eliminarEstudiante' id=estudiante.idestudiante %}">Eliminar</a>
+                </p>
+            </li>
+{% endfor %}
 {% endblock %}
 {% block script %}
 <script type="text/javascript">

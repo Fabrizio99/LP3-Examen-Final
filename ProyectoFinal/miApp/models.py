@@ -14,3 +14,14 @@ class Carrera(models.Model):
     nombrecorto   =  models.TextField()
     fecha_fundacion = models.DateTimeField()
     estado  =  models.CharField(max_length=1)
+
+
+class Estudiante(models.Model):
+    idestudiante =  models.AutoField(primary_key=True)
+    codigo  =  models.TextField()
+    nombre   =  models.TextField()
+    apellido = models.TextField()
+    dni  =  models.TextField() 
+    direccion = models.TextField()
+    fecha_nacimiento = models.DateTimeField()
+    estado  =  models.CharField(max_length=1)
