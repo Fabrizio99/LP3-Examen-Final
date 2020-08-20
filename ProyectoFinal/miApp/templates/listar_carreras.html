@@ -5,6 +5,20 @@
 {% block content %}
 <h2 class="title">{{titulo}}</h2>
 <p>{{mensaje}}</p>
+{% for carrera in carreras %}
+            <li>
+                <h4>{{carrera.idcarrera}} - {{carrera.nombre}}</h4>
+                <span>Nombre corto: {{carrera.nombrecorto}} </span>
+                <span>Fecha de fundacion: {{carrera.fecha_fundacion}} </span>
+                {% if carrera.estado == 'A' %}
+                    <strong>Activo</strong>
+                {% else %}
+                    <strong>Inactivo</strong>
+                {% endif %}
+                <a href="{% url 'eliminarCarrera' id=carrera.idcarrera %}">Eliminar</a>
+                </p>
+            </li>
+{% endfor %}
 {% endblock %}
 {% block script %}
 <script type="text/javascript">

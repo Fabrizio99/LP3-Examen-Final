@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse,redirect
-from miApp.models import Curso
+from miApp.models import Curso 
+from miApp.models import Carrera 
 
 # Create your views here.
 def index(request):     return render(request,'index.html',
@@ -16,8 +17,11 @@ def listar_cursos(request):
 
 
 def listar_carreras(request):
+    carreras = Carrera.objects.all()
     return render(request,'listar_carreras.html',
-        {         'titulo' : 'CARRERAS','mensaje' : 'LISTADO DE CARRERAS' })
+        {         'titulo' : 'CARRERAS',
+                'mensaje' : 'LISTADO DE CARRERAS',
+                'carreras': carreras })
 
 
 def listar_estudiantes(request):
@@ -34,3 +38,8 @@ def eliminar_curso(request, id):
     curso = Curso.objects.get(pk=id)     
     curso.delete()     
     return redirect('listarCurso')
+
+def eliminar_carrera(request, id):     
+    carrera = Carrera.objects.get(pk=id)     
+    carrera.delete()     
+    return redirect('listarCarrera')
