@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block title %}
+{{titulo}}
+{% endblock %}
+{% block content %}
+<h2 class="title">{{titulo}}</h2>
+<p>{{mensaje}}</p>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+    let items = Array.from(document.querySelectorAll('.nav-item'));
+    items.forEach((item,index)=>{
+        items[index].children[0].textContent == 'CARRERAS'? items[index].classList.add('itemSelected')
+                :items[index].classList.remove('itemSelected');
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <header>
+        <h1>PROYECTO FINAL</h1>
+    </header>
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="{% url 'inicio' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'listarCurso' %}">CURSOS</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'listarCarrera' %}">CARRERAS</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'listarEstudiantes' %}">ESTUDIANTES</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'listarConsultas' %}">CONSULTAS</a>
+            </li>
+            
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        Lenguaje de Programación III
+    </footer>
+    {% block script %}
+    {% endblock %}
+</body>
+</html>
