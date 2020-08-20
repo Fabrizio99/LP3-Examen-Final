@@ -71,7 +71,31 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    /color: #808283;/
     color: #494848;
     font-weight: 550;
+}
+form {
+    margin-top: 20px;
+}
+form *{
+    display: block;
+    margin-bottom: 5px;
+}
+.radio {
+    display: inline-block;
+}
+input[type="text"],textarea{
+    padding: 5px 2px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 300px;
+}
+
+input[type="submit"]{
+    padding: 5px 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin-top: 30px;
+    font-size: 15px;
 }

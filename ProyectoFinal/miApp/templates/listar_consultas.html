@@ -5,6 +5,24 @@
 {% block content %}
 <h2 class="title">{{titulo}}</h2>
 <p>{{mensaje}}</p>
+<form action="" name="" method="">
+    <label for="name"> Nombre </label>
+    <input type="text" name="name">
+    
+    <label for="correo"> Correo </label>
+    <input type="text" name="correo">
+
+    <label for="sexo"> Sexo </label>
+    <input type="radio" id="M" name="genero" value="masculino" class="radio">
+    <label for="M" class="radio">Masculino</label><br>
+    <input type="radio" id="F" name="genero" value="femenino" class="radio">
+    <label for="F" class="radio">Femenino</label><br>
+
+    <label for="consulta"> Consulta </label>
+    <textarea type="consulta"></textarea>
+
+    <input type="submit" value="Enviar"/>
+</form>
 {% endblock %}
 {% block script %}
 <script type="text/javascript">
